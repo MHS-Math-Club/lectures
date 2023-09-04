@@ -1,0 +1,562 @@
+\documentclass{article}
+\usepackage{amsmath}
+
+\title{Gaussian Elimination: Math Club Notes}
+\author{Markus Hoehn}
+\date{}
+
+\begin{document}
+\maketitle
+
+\section*{Linear Systems}
+
+\subsection*{Simple System}
+\begin{align*}
+    3x_1 + 2x_2 &= -6 \\
+    2x_1 + 5x_2 &= 7
+\end{align*}
+Solution: $(-4, 3)$
+
+To solve for \(x_1\) and \(x_2\) in this simple system, we will use the substitution method. 
+
+\subsection*{Another Simple System}
+\begin{align*}
+    x_1 + 2x_2 - x_3 &= 2 \\
+    2x_1 - 3x_2 + x_3 &= -1 \\
+    5x_1 - x_2 - 2x_3 &= -3
+\end{align*}
+Solution: $(1, 2, 3)$
+
+In this slightly more complex system, we can still employ the substitution method to determine the values of \(x_1\), \(x_2\), and \(x_3\). 
+
+\subsection*{Harder System}
+\begin{align*}
+    x_1 + 2x_2 - 3x_3 + 4x_4 = 12 \\
+    2x_1 + 2x_2 - 2x_3 + 3x_4 = 10 \\
+    x_2 + x_3 = -1 \\
+    x_1 - x_2 + x_3 - 2x_4 = -4
+\end{align*}
+
+Solving this harder system, with 4 variables, using substitution is extremely time-consuming. For larger systems, like 50 equations with 50 variables, it becomes impractical. In many STEM fields that require computational work, linear systems like these are common, often much larger in scale, you may have thousands or millions of linear equations. Now you could attempt to write code for our substitution method but this again becomes impractical.
+
+\newpage
+
+\section*{Matrices and Gaussian Elimination}
+
+Thankfully, computers come equipped with powerful GPUs specifically designed for tasks such as matrix multiplication and other matrix operations. And we will want to harness that power. To do this we will look at our topic Gaussian Elimination, a method for solving systems of linear equations using matrices.
+
+\subsection*{Matrices}
+
+In it's most pure computational form a matrix is a rectangular array of numbers. A matrix with \(n\) rows and \(m\) columns is denoted as an \(n \times m\) matrix. Here's an example of a \(2 \times 3\) matrix:
+
+\[
+A = 
+\begin{bmatrix}
+    1 & 4 & 5 \\
+    12 & 11 & 7 \\
+\end{bmatrix}
+\]
+
+
+Here are some common types of matrices:
+
+\begin{enumerate}
+    \item \textbf{Row Matrix (n=1)}:
+    \[
+    \mathbf{v} = [1 \ 2 \ 3]
+    \]
+    \item \textbf{Column Matrix (m=1)}: 
+    \[
+    \mathbf{w} =
+    \begin{bmatrix}
+        4 \\
+        5 \\
+        6
+    \end{bmatrix}
+    \]
+    
+    \item \textbf{Square Matrix (n=m)}: 
+    \[
+    B =
+    \begin{bmatrix}
+        2 & 0 & 1 \\
+        3 & -1 & 2 \\
+        4 & 5 & 0
+    \end{bmatrix}
+    \]
+    
+    In this case, \(B\) is a \(3 \times 3\) square matrix.
+    
+\end{enumerate}
+
+\newpage
+
+\subsection*{Matrix Multiplication}
+
+Matrix multiplication is defined for multiplying an \(n \times m\) matrix by an \(m \times p\) matrix and gives a  \(n \times p\).
+
+\subsubsection*{Row and Column Matrices}
+
+\begin{center}
+    \(\mathbf{A} = [1, 3, 4, 6]\) 
+\end{center}
+
+\[
+\mathbf{B} =
+\begin{bmatrix}
+    5 \\
+    9 \\
+    8 \\
+    7
+\end{bmatrix}
+\]
+
+\[
+\mathbf{A} \cdot \mathbf{B} = 5 \cdot 1 + 9 \cdot 3 + 8 \cdot 4 + 7 \cdot 6 = 106
+\]
+
+
+\subsubsection*{General Case}
+
+Matrix multiplication can be seen as a combination of these row and column multiplications.
+
+\subsubsection*{Example}
+
+Consider the matrices:
+\[
+\mathbf{A} =
+\begin{bmatrix}
+    2 & 0 & -1 \\
+    3 & 1 & 4 \\
+    -2 & 2 & 3 \\
+\end{bmatrix}
+\]
+
+\[
+\mathbf{B} =
+\begin{bmatrix}
+    5 & -1 & 2 \\
+    0 & 3 & -2 \\
+    1 & 2 & -3 \\
+\end{bmatrix}
+\]
+The element at the intersection of the first row and first column in our product matrix $\mathbf{A} \cdot \mathbf{B}$ is obtained by multiplying the corresponding elements from the first row of $\mathbf{A}$ with the elements in the first column of $\mathbf{B}$, and this process extends to all elements in the resulting matrix.
+
+\[
+\mathbf{A} \cdot \mathbf{B} =
+\begin{bmatrix}
+    9 & -4 & 7 \\
+    19 & 8 & -8 \\
+    -7 & 14 & -17 \\
+\end{bmatrix}
+\]
+
+\newpage
+
+\subsection*{Augmented Matrix Form}
+
+Consider the \(4 \times 4\) matrix below:
+\[
+\mathbf{A} =
+\begin{bmatrix}
+    1 & 2 & -3 & 4 \\
+    2 & 2 & -2 & 3 \\
+    0 & 1 & 1 & 0 \\
+    1 & -1 & 1 & -2
+\end{bmatrix}
+\]
+
+Also consider the \(4 \times 1\) matrix below:
+\[
+\mathbf{x} =
+\begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    x_3 \\
+    x_4
+\end{bmatrix}
+\]
+
+We can multiply our matrices since the number of columns of $\mathbf{A}$ is the same as the number of rows of $x$.
+\[
+\mathbf{Ax} =
+\begin{bmatrix}
+    x_1 + 2x_2 - 3x_3 + 4x_4 \\
+    2x_1 + 2x_2 - 2x_3 + 3x_4 \\
+    x_2 + x_3 \\
+    x_1 - x_2 + x_3 - 2x_4
+\end{bmatrix}
+\]
+The observant listener may notice these linear expression look the left hand side of our harder system. We can convert our linear system problem to matrix language by adding the right hand side as a matrix $\mathbf{B}$ and asking when does $\mathbf{Ax} = \mathbf{b}$
+\[
+\mathbf{B} =
+\begin{bmatrix}
+    12 \\
+    10 \\
+    -1 \\
+    -4
+\end{bmatrix}
+\]
+Putting it together nicely we have
+
+\[
+\begin{bmatrix}
+    1 & 2 & -3 & 4 & \\
+    2 & 2 & -2 & 3 & \\
+    0 & 1 & 1 & 0 & \\
+    1 & -1 & 1 & -2 & 
+\end{bmatrix}
+\begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    x_3 \\
+    x_4
+\end{bmatrix}
+=
+\begin{bmatrix}
+    12 \\
+    10 \\
+    -1 \\
+    -4
+\end{bmatrix}
+\]
+
+We can write this matrix equation more concisely using the notation of an augmented matrix:
+\[
+\left[ 
+    \begin{array}{cccc|c}
+    1 & 2 & -3 & 4 & 12 \\
+    2 & 2 & -2 & 3 & 10 \\
+    0 & 1 & 1 & 0 & -1 \\
+    1 & -1 & 1 & -2 & -4
+    \end{array}
+\right]
+\]
+
+We have successfully transferred our linear systems process to the language of matrices. Now how will we use this? 
+
+\newpage
+
+\subsection*{Elementary Row Operations}
+
+There are three types of elementary row operations we can apply to our augmented matrix:
+\begin{enumerate}
+    \item Swapping two rows
+    \item Multiplying a row by a nonzero number
+    \item Adding a multiple of one row another row
+\end{enumerate}
+I am going to claim that performing any of these row operations to our augmented matrix will not alter the solution. To demonstrate this we can step back to our previous language where "rows" of our augmented matrix are equations.
+
+Consider the following system of equations:
+
+\begin{align*}
+    2x_1 + 3x_2 &= 7 \\
+    4x_1 - 2x_2 &= 2
+\end{align*}
+
+It's evident that this system has an equivalent solution when the order of the equations is swapped:
+\begin{align*}
+    4x_1 - 2x_2 &= 2 \\
+    2x_1 + 3x_2 &= 7
+\end{align*}
+
+Now, let's delve into the second operation. Consider the solutions of:
+\begin{align*}
+    2(2x_1 + 3x_2) &= 2(7) \\
+    4x_1 - 2x_2 &= 2
+\end{align*}
+Again, it's evident that this operation doesn't alter the solutions, drawing upon our intuition from middle school algebra.
+
+
+The final case is a bit more intricate. Why doesn't adding a multiple of one equation to another equation change the solution set? Let's explore this:
+\begin{align*}
+    2x_1 + 3x_2 + k(4x_1 - 2x_2) &= 7 + k(2) \\
+    4x_1 - 2x_2 &= 2
+\end{align*}
+Although this appears different, since $4x_1 - 2x_2 = 2$, we can employ substitution to rewrite it as follows:
+\begin{align*}
+    2x_1 + 3x_2 + k(2) &= 7 + k(2) \\
+    4x_1 - 2x_2 &= 2
+\end{align*}
+Now, we can confidently conclude that this is valid. We've essentially added the same constant to both sides of the equation, relying on our intuition from middle school algebra.
+
+Now that we believe we can perform row operation without changing our solutions how does this help?
+
+
+\subsection*{Gaussian Elimination: Row Reduction}
+\begin{align*}
+&
+\left[ 
+    \begin{array}{cccc|c}
+    1 & 2 & -3 & 4 & 12 \\
+    2 & 2 & -2 & 3 & 10 \\
+    0 & 1 & 1 & 0 & -1 \\
+    1 & -1 & 1 & -2 & -4
+    \end{array}
+\right]
+\xrightarrow{\substack{R_2 - 2R_1 \\ R_4 - R_1}}
+\left[ 
+    \begin{array}{cccc|c}
+    1 & 2 & -3 & 4 & 12 \\
+    0 & -2 & 4 & -5 & -14 \\
+    0 & 1 & 1 & 0 & -1 \\
+    0 & -3 & 4 & -6 & -16
+    \end{array}
+\right] \\ \\
+\xrightarrow{R_2/-2}
+&\left[ 
+    \begin{array}{cccc|c}
+    1 & 2 & -3 & 4 & 12 \\
+    0 & 1 & -2 & \frac{5}{2} & 7 \\
+    0 & 1 & 1 & 0 & -1 \\
+    0 & -3 & 4 & -6 & -16
+    \end{array}
+\right]
+\xrightarrow{\substack{R_1 - 2R_2 \\ R_3 - R_2 \\ R_4 + 3R_2}}
+\left[ 
+    \begin{array}{cccc|c}
+    1 & 0 & 1 & -1 & -2 \\
+    0 & 1 & -2 & \frac{5}{2} & 7 \\
+    0 & 0 & 3 & -\frac{5}{2} & -8 \\
+    0 & 0 & -2 & \frac{3}{2} & 5
+    \end{array}
+\right] \\ \\ 
+\xrightarrow{R_3/3}
+&\left[ 
+    \begin{array}{cccc|c}
+    1 & 0 & 1 & -1 & -2 \\
+    0 & 1 & -2 & \frac{5}{2} & 7 \\
+    0 & 0 & 1 & -\frac{5}{6} & -\frac{8}{3} \\
+    0 & 0 & -2 & \frac{3}{2} & 5
+    \end{array}
+\right]
+\xrightarrow{\substack{R_1 - R_3 \\ R_2 + 2R_3 \\ R_4 + 2R_3}}
+\left[ 
+    \begin{array}{cccc|c}
+    1 & 0 & 0 & -\frac{1}{6} & -\frac{2}{3} \\
+    0 & 1 & 0 & \frac{5}{6} & \frac{5}{3} \\
+    0 & 0 & 1 & -\frac{5}{6} & -\frac{8}{3} \\
+    0 & 0 & 0 & -\frac{1}{6} & -\frac{1}{3}
+    \end{array}
+\right] \\ \\ 
+\xrightarrow{-6R_4}
+&\left[ 
+    \begin{array}{cccc|c}
+    1 & 0 & 0 & -\frac{1}{6} & -\frac{2}{3} \\
+    0 & 1 & 0 & \frac{5}{6} & \frac{5}{3} \\
+    0 & 0 & 1 & -\frac{5}{6} & -\frac{8}{3} \\
+    0 & 0 & 0 & 1 & 2
+    \end{array}
+\right]
+\xrightarrow{\substack{R_1 + \frac{1}{6}R_4 \\ R_2 - \frac{5}{6}R_4 \\ R_3 + \frac{5}{6}R_4}}
+\left[ 
+    \begin{array}{cccc|c}
+    1 & 0 & 0 & 0 & 1 \\
+    0 & 1 & 0 & 0 & 0 \\
+    0 & 0 & 1 & 0 & -1 \\
+    0 & 0 & 0 & 1 & 2
+    \end{array}
+\right]
+\end{align*}
+
+If you found that to be painful, substitution is far worst. You're welcome to give it a try. This is where you'll truly understand why Gaussian Elimination earned its name. The objective of the row reduction process is to eliminate all values outside the diagonal and transform the remaining values into 1. This gives a nice correspondence of our $\mathbf{x}$ matrix and $\mathbf{B}$ matrix. Putting back our augmented matrix to $Ax=b$ form:
+
+\[
+\begin{bmatrix}
+    1 & 0 & 0 & 0 & \\
+    0 & 1 & 0 & 0 & \\
+    0 & 0 & 1 & 0 & \\
+    0 & 0 & 0 & 1 & 
+\end{bmatrix}
+\begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    x_3 \\
+    x_4
+\end{bmatrix}
+=
+\begin{bmatrix}
+    1 \\
+    0 \\
+    -1 \\
+    2
+\end{bmatrix}
+\implies
+\begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    x_3 \\
+    x_4
+\end{bmatrix}
+=
+\begin{bmatrix}
+    1 \\
+    0 \\
+    -1 \\
+    2
+\end{bmatrix}
+\]
+
+Thus we have our solution. Now let's apply our knowledge.
+
+\newpage
+
+\section*{Stoichiometry}
+
+\subsection*{The Problem and Setup}
+
+We could use our knowledge to quickly balance chemical equations. In both sides of this reaction combustion reaction of Propane we want the same number of carbon, oxygen, and hydrogen atoms, thus we need to figure out what are known as the stoichiometric coefficients.
+
+\begin{center}
+    C3H8 + 5O2 $\xrightarrow{}$ 3CO2 + 4H2O  \\
+    ($x_1$)C3H8 + ($x_2$)O2 $\xrightarrow{}$ ($x_3$)CO2 + ($x_4$)H2O
+\end{center}
+
+\[
+\begin{bmatrix}
+    \text{Number of Carbon Atoms} \\
+    \text{Number of Hydrogen Atoms} \\
+    \text{Number of Oxygen Atoms} \\
+\end{bmatrix}
+\]
+
+\begin{align*}
+x_1&\begin{bmatrix}
+    \text{3} \\
+    \text{8} \\
+    \text{0} \\
+\end{bmatrix} + x_2 \begin{bmatrix}
+    \text{0} \\
+    \text{0} \\
+    \text{2} \\
+\end{bmatrix}
+=
+x_3\begin{bmatrix}
+    \text{1} \\
+    \text{0} \\
+    \text{2} \\
+\end{bmatrix}
++ x_4\begin{bmatrix}
+    \text{0} \\
+    \text{2} \\
+    \text{1} \\
+\end{bmatrix} \\
+\implies x_1&\begin{bmatrix}
+    \text{3} \\
+    \text{8} \\
+    \text{0} \\
+\end{bmatrix} + x_2 \begin{bmatrix}
+    \text{0} \\
+    \text{0} \\
+    \text{2} \\
+\end{bmatrix}
+- x_3\begin{bmatrix}
+    \text{1} \\
+    \text{0} \\
+    \text{2} \\
+\end{bmatrix}
+- x_4\begin{bmatrix}
+    \text{0} \\
+    \text{2} \\
+    \text{1} \\
+\end{bmatrix}
+= \begin{bmatrix}
+    \text{0} \\
+    \text{0} \\
+    \text{0} \\
+\end{bmatrix} \\
+=
+&\begin{bmatrix}
+    3 & 0 & 1 & 0 \\
+    8 & 0 & 0 & 2 \\
+    0 & 2 & 2 & 1 \\
+\end{bmatrix}
+\begin{bmatrix}
+    x_1 \\
+    x_2 \\
+    x_3 \\
+    x_4 
+\end{bmatrix}
+= \begin{bmatrix}
+    \text{0} \\
+    \text{0} \\
+    \text{0} \\
+\end{bmatrix} \\
+\end{align*}
+
+\newpage
+
+\subsection*{Solution}
+
+As an augmented matrix:
+\begin{align*}
+&\left[ 
+    \begin{array}{cccc|c}
+    3 & 0 & 1 & 0 & 0\\
+    8 & 0 & 0 & 2 & 0\\
+    0 & 2 & 2 & 1 & 0
+    \end{array}
+\right]
+\xrightarrow{R_1/3}
+\left[ 
+    \begin{array}{cccc|c}
+    1 & 0 & \frac{1}{3} & 0 & 0\\
+    8 & 0 & 0 & 2 & 0\\
+    0 & 2 & 2 & 1 & 0
+    \end{array}
+\right] \\
+\xrightarrow{R_2 - 8R_1}
+&\left[ 
+    \begin{array}{cccc|c}
+    1 & 0 & \frac{1}{3} & 0 & 0\\
+    0 & 0 & -\frac{8}{3} & 2 & 0\\
+    0 & 2 & 2 & 1 & 0
+    \end{array}
+\right]
+\xrightarrow{R_2 \leftrightarrow R_3}
+\left[ 
+    \begin{array}{cccc|c}
+    1 & 0 & \frac{1}{3} & 0 & 0\\
+    0 & 2 & 2 & 1 & 0\\
+    0 & 0 & -\frac{8}{3} & 2 & 0
+    \end{array}
+\right] \\
+\xrightarrow{\substack{R_{2}/2 \\ -\frac{3}{8}R_{3}}}
+&\left[ 
+    \begin{array}{cccc|c}
+    1 & 0 & \frac{1}{3} & 0 & 0\\
+    0 & 1 & 1 & \frac{1}{2} & 0\\
+    0 & 0 & 1 & -\frac{3}{4} & 0
+    \end{array}
+\right] 
+\xrightarrow{\substack{R_{1} - \frac{1}{3}R_3 \\ R_2 - R_3}}
+\left[ 
+    \begin{array}{cccc|c}
+    1 & 0 & 0 & \frac{1}{4} & 0 \\
+    0 & 1 & 0 & \frac{5}{4} & 0 \\
+    0 & 0 & 1 & -\frac{3}{4} & 0
+    \end{array}
+\right] 
+\end{align*}
+
+Notice that $x_4$ is a free variable that the other variables depend on let $x_4 = t$
+
+\begin{align*}
+    x_1 &= \frac{1}{4}t \\
+    x_2 &= \frac{5}{4}t \\
+    x_3 &= \frac{3}{4}t
+\end{align*}
+
+It is logical to have a single free variable because when we proportionally scale all the coefficients, the balance of our equation should remain unaffected. For instance, if a reaction requires 1 part nitrogen gas and 3 parts hydrogen gas, having 100 gallons of nitrogen gas and 300 gallons of hydrogen gas ensures there are no leftovers due to the stoichiometric ratio being met.
+
+Though we want the lowest value of $t$ such that every value is an integer so we choose the solution where $t=4$
+
+thus we have, $x_1 = 1, x_2=5, x_3=3,x_4=4$
+
+\begin{center}
+    C3H8 + 5O2 $\xrightarrow{}$ 3CO2 + 4H2O \\
+\end{center}
+
+and our reaction is balanced.
+
+\end{document}
