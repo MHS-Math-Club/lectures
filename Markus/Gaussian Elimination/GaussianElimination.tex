@@ -51,7 +51,7 @@ Solution: $(1, 2, 3)$
     x_1 - x_2 + x_3 - 2x_4 &= -4
 \end{align*}
 
-Solving this harder system, with 4 variables, using substitution is extremely time-consuming. For larger systems, like 50 equations with 50 variables, it becomes impractical. In many STEM fields that require computational work, linear systems like these are common, often much larger in scale, you may have thousands or millions of linear equations. Now you could attempt to write code for our substitution method but this again becomes impractical.
+Solving this harder system using substitution is extremely time-consuming. For larger systems, like 50 equations with 50 variables, it becomes impractical. In many STEM fields that require computational work, linear systems like these are common, often much larger in scale, you may have thousands or millions of linear equations. Now you could attempt to write code for our substitution method but this again becomes impractical.
 
 \end{frame}
 
@@ -192,7 +192,7 @@ Also consider the \(4 \times 1\) matrix below:
 \end{bmatrix}
 \]
 
-We can multiply our matrices since the number of columns of $\mathbf{A}$ is the same as the number of rows of $x$.
+We can multiply our matrices since the number of columns of $\mathbf{A}$ is the same as the number of rows of $\mathbf{x}$.
 \[
 \mathbf{Ax} =
 \begin{bmatrix}
@@ -205,7 +205,7 @@ We can multiply our matrices since the number of columns of $\mathbf{A}$ is the 
 \end{frame}
 
 \begin{frame}{Augmented Matrix Form}
-The observant listener may notice these linear expression look the left hand side of our harder linear system. We can convert our linear system problem to matrix language by adding the right hand side as a matrix $\mathbf{B}$ and asking when does $\mathbf{Ax} = \mathbf{b}$
+The observant listener may notice these linear expression look like the left hand side of our harder linear system. We can convert our linear system problem to matrix language by adding the right hand side as a matrix $\mathbf{B}$ and asking when does $\mathbf{Ax} = \mathbf{b}$
 \[
 \mathbf{B} =
 \begin{bmatrix}
@@ -393,7 +393,7 @@ Now that we believe we can perform row operation without changing our solutions 
 
 \begin{frame}{Gaussian Elimination}
 \framesubtitle{Row Reduction}
-If you found that to be painful, substitution is far worst. You're welcome to give it a try. This is where you'll truly understand why Gaussian Elimination earned its name. The objective of the row reduction process is to eliminate all values outside the diagonal and transform the remaining values into 1. This gives a nice correspondence of our $\mathbf{x}$ matrix and $\mathbf{B}$ matrix. Putting back our augmented matrix to $Ax=b$ form:
+If you found that to be painful, substitution is far worst. You're welcome to give it a try. This is where you'll truly understand why Gaussian Elimination earned its name. The objective of the row reduction process is to eliminate all values outside the diagonal and transform the remaining values into 1. This gives a nice correspondence of our $\mathbf{x}$ matrix and $\mathbf{B}$ matrix. Putting back our augmented matrix to $\mathbf{Ax=b}$ form:
 
 \[
 \begin{bmatrix}
@@ -585,7 +585,7 @@ Notice that $x_4$ is a free variable that the other variables depend on let $x_4
 \begin{frame}{Stoichiometry}
     It is logical to have a single free variable because when we proportionally scale all the coefficients, the balance of our equation should remain unaffected.
 
-    Though we want the lowest value of $t$ such that every value is an integer so we choose the solution where $t=4$
+    However we want the lowest value of $t$ such that every value is an integer so we choose the solution where $t=4$
 
 thus we have, $x_1 = 1, x_2=5, x_3=3,x_4=4$
 
