@@ -2,7 +2,7 @@
 
 - **September 6th, 2023**
   - *Lecturer: Markus*
-  - **Topic:** Gaussian Elimination
+  - **Topic:** [Gaussian Elimination](/Markus/Gaussian%20Elimination)
 
 - **September 27th, 2023**
   - *Lecturer: Syoma*
