@@ -19,3 +19,14 @@
 - **October 18th, 2023**
   - *Lecturer: Markus*
   - **Topic:** [The Three Utilities Problem](/Markus/The%20Three%20Utilities%20Problem.pdf)
+
+- **October 25th, 2023**
+  - *Lecturer: Andrei*
+  - **Topic:** [Neural Networks](/Andrei/Neural%20Networks.pdf)
+
+- **November 1st, 2023**
+  - *Lecturer: Andrei*
+  - **Topic:** [AMC 10/12 Preparation](/Andrei/AMC%2010_12%20Prep.pdf)
+ 
+  
+ 
