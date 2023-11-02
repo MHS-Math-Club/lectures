@@ -27,6 +27,7 @@
 - **November 1st, 2023**
   - *Lecturer: Andrei*
   - **Topic:** [AMC 10/12 Preparation](/Andrei/AMC%2010_12%20Prep.pdf)
+  - **Additional Resources:** https://artofproblemsolving.com/wiki/index.php/AMC_Problems_and_Solutions
  
   
  
