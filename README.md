@@ -28,6 +28,8 @@
   - *Lecturer: Andrei*
   - **Topic:** [AMC 10/12 Preparation](/Andrei/AMC%2010_12%20Prep.pdf)
   - **Additional Resources:** https://artofproblemsolving.com/wiki/index.php/AMC_Problems_and_Solutions
- 
-  
+
+- **November 15th, 2023**
+  - *Lecturer: Syoma*
+  - **Topic:** [Cake Cutting](/Syoma/)
  
