@@ -31,7 +31,7 @@
 
 - **November 8th, 2023**
   - *Guest Lecturer: Abdullah*
-  - **Topic:** [Witnessable Problems]
+  - **Topic:** Witnessable Problems
 
 - **November 15th, 2023**
   - *Lecturer: Syoma*
