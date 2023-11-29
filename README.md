@@ -31,5 +31,5 @@
 
 - **November 15th, 2023**
   - *Lecturer: Syoma*
-  - **Topic:** [Cake Cutting](/Syoma/Fair%cake%cutting.pdf)
+  - **Topic:** [Cake Cutting](/Syoma/Fair%20cake%20cutting.pdf)
  
