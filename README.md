@@ -18,7 +18,7 @@
 
 - **October 18th, 2023**
   - *Lecturer: Markus*
-  - **Topic:** [The Three Utilities Problem](/Markus/The%20Three%20Utilities%20Problem.pdf)
+  - **Topic:** [The Three Utilities Problem](/Markus/TheThreeUtilitiesProblem.pdf)
 
 - **October 25th, 2023**
   - *Lecturer: Andrei*
