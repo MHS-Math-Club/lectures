@@ -38,6 +38,6 @@
   - **Topic:** [Cake Cutting](/Syoma/Fair%20cake%20cutting.pdf)
  
 - **December 6th, 2023**
-  - *Lecturer: Markue*
+  - *Lecturer: Markus*
   - **Topic:** [Mathematics of Cryptocurrency](/Markus/MathematicsOfCryptocurrency.pdf)
  
