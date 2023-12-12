@@ -38,6 +38,10 @@
 ### November 15th, 2023
   - *Lecturer: Syoma*
   - **Topic:** [Cake Cutting](/Syoma/Fair%20cake%20cutting.pdf)
+
+### November 29th, 2023
+  - *Lecturers: Syoma and Andrei*
+  - **Topic:** [Math Club T-Shirt Designs](/Syoma/Math%20club%20designs.pdf)
  
 ### December 6th, 2023
   - *Lecturer: Markus*
