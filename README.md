@@ -46,3 +46,11 @@
 ### December 6th, 2023
   - *Lecturer: Markus*
   - **Topic:** [Mathematics of Cryptocurrency](/Markus/MathematicsOfCryptocurrency.pdf)
+
+### January 18th, 2023
+  - *Lecturer: Syoma*
+  - **Topic:** [Dragon Curve](/Syoma/Dragon%20Curve.pdf)
+
+### January 25th, 2023
+  - *Lecturer: Syoma*
+  - **Topic:** [Font Rasterization](/Syoma/font_rasterization.pdf)
