@@ -54,3 +54,8 @@
 ### January 25th, 2023
   - *Lecturer: Syoma*
   - **Topic:** [Font Rasterization](/Syoma/font_rasterization.pdf)
+
+### February 1st, 2023
+  - *Lecturer: Andrei*
+  - **Topic:** [CounterfeitCoins.pdf](/Andrei/CounterfeitCoins.pdf)
+
