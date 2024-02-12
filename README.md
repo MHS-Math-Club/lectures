@@ -57,5 +57,5 @@
 
 ### February 1st, 2023
   - *Lecturer: Andrei*
-  - **Topic:** [CounterfeitCoins.pdf](/Andrei/CounterfeitCoins.pdf)
+  - **Topic:** [Counterfeit Coins](/Andrei/CounterfeitCoins.pdf)
 
