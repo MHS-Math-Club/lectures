@@ -59,3 +59,20 @@
   - *Lecturer: Andrei*
   - **Topic:** [Counterfeit Coins](/Andrei/CounterfeitCoins.pdf)
 
+### February 15th, 2023
+  - *Lecturer: Syoma*
+  - **Topic:** [Secretary Problem](worstlecturetoexist.pdf)
+
+
+### February 22nd, 2023
+  - *Lecturer: Andrei*
+  - **Topic:** Conceptual Calculus
+
+### February 29th, 2023
+  - *Lecturer: Markus*
+  - **Topic:** [Prisoner's Dillema](/Markus/PrisonersDillema.pdf)
+
+
+
+
+
