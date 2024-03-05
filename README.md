@@ -70,7 +70,7 @@
 
 ### February 29th, 2023
   - *Lecturer: Markus*
-  - **Topic:** [Prisoner's Dillema](/Markus/PrisonersDillema.pdf)
+  - **Topic:** [Prisoner's Dillema](/Markus/PrisonersDilemma.pdf)
 
 
 
