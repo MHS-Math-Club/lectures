@@ -47,6 +47,9 @@
   - *Lecturer: Markus*
   - **Topic:** [Mathematics of Cryptocurrency](/Markus/MathematicsOfCryptocurrency.pdf)
 
+## Spring 2024
+
+
 ### January 18th, 2023
   - *Lecturer: Syoma*
   - **Topic:** [Dragon Curve](/Syoma/Dragon%20Curve.pdf)
