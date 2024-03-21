@@ -63,7 +63,7 @@
   - **Topic:** [Counterfeit Coins](/Andrei/CounterfeitCoins.pdf)
 
 ### February 15th, 2023
-  - *Lecturer: Syoma*
+  - *Lecturer: Syoma (Prepared by Markus)* 
   - **Topic:** [Secretary Problem](worstlecturetoexist.pdf)
 
 
