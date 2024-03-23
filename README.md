@@ -10,7 +10,7 @@
 
 ### February 22nd, 2023
   - *Lecturer: Andrei*
-  - **Topic:** Conceptual Calculus
+  - **Topic:** Conceptual Calculus(/Andrei/ConceptualCalculus.pdf)
 
 ### February 15th, 2023
   - *Lecturer: Syoma (Prepared by Markus)* 
