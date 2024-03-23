@@ -14,7 +14,7 @@
 
 ### February 15th, 2023
   - *Lecturer: Syoma (Prepared by Markus)* 
-  - **Topic:** [Secretary Problem](worstlecturetoexist.pdf)
+  - **Topic:** [Mathematically Optimized Dating](/Syoma/worstlecturetoexist.pdf)
 
 ### February 1st, 2023
   - *Lecturer: Andrei*
