@@ -73,4 +73,4 @@
 
 ### September 6th, 2023
   - *Lecturer: Markus*
-  - **Topic:** [Gaussian Elimination](/Markus/Gaussian%20Elimination)
+  - **Topic:** [Gaussian Elimination](/Markus/Gaussian%20Elimination/GaussianElimination.pdf)
