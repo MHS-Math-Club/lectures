@@ -2,7 +2,7 @@
 
 ### March 28th, 2023
   - *Lecturer: Markus*
-  - **Topic:** [RSA Encryption](/Markus/RSA%Encryption/rsa.pdf)
+  - **Topic:** [RSA Encryption](/Markus/RSA%20Encryption/rsa.pdf)
 
 
 ### March 21st, 2023
