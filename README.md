@@ -1,35 +1,39 @@
 ## Spring 2024
 
-### March 28th, 2023
+### April 5th, 2024
+  - *Guest Lecturer: Philipp*
+  - **Topic:** Borromean Rings
+
+### March 28th, 2024
   - *Lecturer: Markus*
   - **Topic:** [RSA Encryption](/Markus/RSA%20Encryption/rsa.pdf)
 
 
-### March 21st, 2023
+### March 21st, 2024
   - *PI Day (late)!!*
   - **Topic:** [PI DAY PIE](PiDay.png)
 
-### February 29th, 2023
+### February 29th, 2024
   - *Lecturer: Markus*
   - **Topic:** [Prisoner's Dilemma](/Markus/PrisonersDilemma.pdf)
 
-### February 22nd, 2023
+### February 22nd, 2024
   - *Lecturer: Andrei*
   - **Topic:** [Conceptual Calculus](/Andrei/ConceptualCalculus.pdf)
 
-### February 15th, 2023
+### February 15th, 2024
   - *Lecturer: Syoma (Prepared by Markus)* 
   - **Topic:** [Mathematically Optimized Dating](/Syoma/worstlecturetoexist.pdf)
 
-### February 1st, 2023
+### February 1st, 2024
   - *Lecturer: Andrei*
   - **Topic:** [Counterfeit Coins](/Andrei/CounterfeitCoins.pdf)
 
-### January 25th, 2023
+### January 25th, 2024
   - *Lecturer: Syoma*
   - **Topic:** [Font Rasterization](/Syoma/font_rasterization.pdf)
 
-### January 18th, 2023
+### January 18th, 2024
   - *Lecturer: Syoma*
   - **Topic:** [Dragon Curve](/Syoma/Dragon%20Curve.pdf)
 
