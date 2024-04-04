@@ -83,3 +83,7 @@
 ### September 6th, 2023
   - *Lecturer: Markus*
   - **Topic:** [Gaussian Elimination](/Markus/Gaussian%20Elimination/GaussianElimination.pdf)
+
+### August 30th, 2023
+  - *Lecturer: Andrei*
+  - **Topic:** Buffon's Needle
