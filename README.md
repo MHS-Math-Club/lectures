@@ -2,7 +2,7 @@
 
 ### April 5th, 2024
   - *Guest Lecturer: Philipp*
-  - **Topic:** [Borromean Rings](BorromeanRings.pdf)
+  - **Topic:** [Borromean Rings](/Misc/BorromeanRings.pdf)
 
 ### March 28th, 2024
   - *Lecturer: Markus*
@@ -11,7 +11,7 @@
 
 ### March 21st, 2024
   - *PI Day (late)!!*
-  - **Topic:** [PI DAY PIE](PiDay.png)
+  - **Topic:** [PI DAY PIE](/Misc/PiDay.png)
 
 ### February 29th, 2024
   - *Lecturer: Markus*
@@ -23,7 +23,7 @@
 
 ### February 15th, 2024
   - *Lecturer: Syoma (Prepared by Markus)* 
-  - **Topic:** [Mathematically Optimized Dating](/Syoma/worstlecturetoexist.pdf)
+  - **Topic:** [Mathematically Optimized Dating](/Misc/worstlecturetoexist.pdf)
 
 ### February 1st, 2024
   - *Lecturer: Andrei*
