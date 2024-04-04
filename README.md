@@ -2,7 +2,7 @@
 
 ### April 5th, 2024
   - *Guest Lecturer: Philipp*
-  - **Topic:** Borromean Rings
+  - **Topic:** [Borromean Rings](BorromeanRings.pdf)
 
 ### March 28th, 2024
   - *Lecturer: Markus*
