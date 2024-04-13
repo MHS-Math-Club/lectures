@@ -1,5 +1,9 @@
 ## Spring 2024
 
+### August 12th, 2024
+  - *Lecturer: Andrei*
+  - **Topic:** [Strassen Algorithm](/Andrei/StrassenAlgorithm.pdf)
+
 ### April 5th, 2024
   - *Guest Lecturer: Philipp*
   - **Topic:** [Borromean Rings](/Misc/BorromeanRings.pdf)
