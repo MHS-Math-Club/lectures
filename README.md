@@ -1,6 +1,14 @@
 ## Spring 2024
 
-### August 12th, 2024
+### May 3rd, 2024
+  - *Lecturer: Markus*
+  - **Topic:** [Dream Speedrunning Controversy](/Markus/dream.pdf)
+
+### April 25th, 2024
+  - *Lecturer: Syoma*
+  - **Topic:** [Random Walks](/Syoma/random_walks.pdf)
+
+### April 12th, 2024
   - *Lecturer: Andrei*
   - **Topic:** [Strassen Algorithm](/Andrei/StrassenAlgorithm.pdf)
 
