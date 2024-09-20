@@ -4,6 +4,10 @@
   - *Lecturer: Markus*
   - **Topic:** Neural Networks, linear and logistic regression
 
+### September 6th, 2024
+  - *Lecturer: Syoma*
+  - **Topic:** [Nim](/Syoma/PizzaNim.pdf)
+
 ## Spring 2024
 
 ### May 3rd, 2024
