@@ -1,3 +1,7 @@
+## Fall 2024
+  - *Lecturer: Markus*
+  - **Topic:** [Neural Networks, linear and logistic regression]
+
 ## Spring 2024
 
 ### May 3rd, 2024
