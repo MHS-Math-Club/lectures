@@ -1,5 +1,9 @@
 ## Fall 2024
 
+### October 4th, 2024
+  - *Lecturer: Andrei*
+  - **Topic:** [Knot Theory](/Andrei/Knots.pdf)
+  - 
 ### September 20th, 2024
   - *Lecturer: Markus*
   - **Topic:** Neural Networks, linear and logistic regression
