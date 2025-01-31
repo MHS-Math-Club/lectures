@@ -6,7 +6,7 @@
 
 ### October 4th, 2024
   - *Lecturer: Andrei*
-  - **Topic:** [Knot Theory](/Andrei/Knots.pdf)
+  - **Topic:** [Birthday Paradox](/Andrei/Knots.pdf)
 
 ### September 20th, 2024
   - *Lecturer: Markus*
