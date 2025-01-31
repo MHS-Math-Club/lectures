@@ -1,5 +1,9 @@
 ## Fall 2024
 
+### January 31st, 2025
+  - *Lecturer: Andrei*
+  - **Topic:** [Knot Theory](/Andrei/Birthday%20Problems.pdf)
+
 ### October 4th, 2024
   - *Lecturer: Andrei*
   - **Topic:** [Knot Theory](/Andrei/Knots.pdf)
