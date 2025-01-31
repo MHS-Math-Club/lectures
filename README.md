@@ -2,11 +2,11 @@
 
 ### January 31st, 2025
   - *Lecturer: Andrei*
-  - **Topic:** [Knot Theory](/Andrei/Birthday%20Problems.pdf)
+  - **Topic:** [Birthday Problem](/Andrei/Birthday%20Problem.pdf)
 
 ### October 4th, 2024
   - *Lecturer: Andrei*
-  - **Topic:** [Birthday Paradox](/Andrei/Knots.pdf)
+  - **Topic:** [Knot Theory](/Andrei/Knots.pdf)
 
 ### September 20th, 2024
   - *Lecturer: Markus*
