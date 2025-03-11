@@ -1,8 +1,10 @@
-## Fall 2024
+## Spring 2025
 
 ### January 31st, 2025
   - *Lecturer: Andrei*
   - **Topic:** [Birthday Problem](/Andrei/Birthday%20Problem.pdf)
+
+## Fall 2024
 
 ### October 4th, 2024
   - *Lecturer: Andrei*
