@@ -1,5 +1,9 @@
 ## Spring 2025
 
+### March 14th, 2025
+  - *Lecturer: Markus*
+  - **Topic:** Basel Problem (featuring pie courtesy of David)
+
 ### January 31st, 2025
   - *Lecturer: Andrei*
   - **Topic:** [Birthday Problem](/Andrei/Birthday%20Problem.pdf)
