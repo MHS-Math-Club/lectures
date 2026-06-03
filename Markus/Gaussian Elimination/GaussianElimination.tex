@@ -51,17 +51,17 @@ Solution: $(1, 2, 3)$
     x_1 - x_2 + x_3 - 2x_4 &= -4
 \end{align*}
 
-Solving this harder system using substitution is extremely time-consuming. For larger systems, like 50 equations with 50 variables, it becomes impractical. In many STEM fields that require computational work, linear systems like these are common, often much larger in scale, you may have thousands or millions of linear equations. Now you could attempt to write code for our substitution method but this again becomes impractical.
+Solving this harder system using substitution is extremely time-consuming. For larger systems, like 50 equations with 50 variables, it becomes impractical. In many STEM fields that require computational work, linear systems like these are common, often much larger in scale. You may have thousands or millions of linear equations. Now you could attempt to write code for our substitution method, but this again becomes impractical.
 
 \end{frame}
 
 \begin{frame}{Intro}
-Thankfully, computers come equipped with powerful GPUs specifically designed for tasks such as matrix multiplication and other matrix operations. And we will want to harness that power. To do this we will look at our topic Gaussian Elimination, a method for solving systems of linear equations using matrices.
+Thankfully, computers come equipped with powerful GPUs specifically designed for tasks such as matrix multiplication and other matrix operations. We will want to harness that power. To do this, we will look at our topic, Gaussian Elimination, a method for solving systems of linear equations using matrices.
 \end{frame}
 
 \begin{frame}{Matrices}
 \framesubtitle{Matrices}
-In it's most pure computational form a matrix is a rectangular array of numbers. A matrix with \(n\) rows and \(m\) columns is denoted as an \(n \times m\) matrix. Here's an example of a \(2 \times 3\) matrix:
+In its most basic computational form, a matrix is a rectangular array of numbers. A matrix with \(n\) rows and \(m\) columns is denoted as an \(n \times m\) matrix. Here's an example of a \(2 \times 3\) matrix:
 
 \[
 A = 
@@ -77,11 +77,11 @@ A =
 Here are some common types of matrices:
 
 \begin{enumerate}
-    \item \textbf{Row Matrix (n=1)}:
+    \item \textbf{Row Matrix (\(n=1\))}:
     \[
     \mathbf{v} = [1 \ 2 \ 3]
     \]
-    \item \textbf{Column Matrix (m=1)}: 
+    \item \textbf{Column Matrix (\(m=1\))}: 
     \[
     \mathbf{w} =
     \begin{bmatrix}
@@ -91,7 +91,7 @@ Here are some common types of matrices:
     \end{bmatrix}
     \]
     
-    \item \textbf{Square Matrix (n=m)}: 
+    \item \textbf{Square Matrix (\(n=m\))}: 
     \[
     B =
     \begin{bmatrix}
@@ -106,11 +106,11 @@ Here are some common types of matrices:
 \end{enumerate}
 \end{frame}
 
-\begin{frame}{Matrices Multiplication}
-Matrix multiplication is defined for multiplying an \(n \times m\) matrix by an \(m \times p\) matrix and gives a  \(n \times p\) matrix.    
+\begin{frame}{Matrix Multiplication}
+Matrix multiplication is defined for multiplying an \(n \times m\) matrix by an \(m \times p\) matrix and gives an \(n \times p\) matrix.    
 \end{frame}
 
-\begin{frame}{Matrices Multiplication}
+\begin{frame}{Matrix Multiplication}
 \framesubtitle{Row and Column Matrices}
 \begin{center}
     \(\mathbf{A} = [1, 3, 4, 6]\) 
@@ -157,7 +157,7 @@ The element at the intersection of the first row and first column in our product
 Now multiply the matrices.
 \end{frame}
 
-\begin{frame}{Matrices Multiplication}
+\begin{frame}{Matrix Multiplication}
 \framesubtitle{General Case Solution}
 Solution: \[
 \mathbf{A} \cdot \mathbf{B} =
@@ -194,7 +194,7 @@ Also consider the \(4 \times 1\) matrix below:
 
 We can multiply our matrices since the number of columns of $\mathbf{A}$ is the same as the number of rows of $\mathbf{x}$.
 \[
-\mathbf{Ax} =
+\mathbf{A}\mathbf{x} =
 \begin{bmatrix}
     x_1 + 2x_2 - 3x_3 + 4x_4 \\
     2x_1 + 2x_2 - 2x_3 + 3x_4 \\
@@ -205,9 +205,9 @@ We can multiply our matrices since the number of columns of $\mathbf{A}$ is the 
 \end{frame}
 
 \begin{frame}{Augmented Matrix Form}
-The observant listener may notice these linear expression look like the left hand side of our harder linear system. We can convert our linear system problem to matrix language by adding the right hand side as a matrix $\mathbf{B}$ and asking when does $\mathbf{Ax} = \mathbf{b}$
+The observant listener may notice these linear expressions look like the left-hand side of our harder linear system. We can convert our linear system problem to matrix language by adding the right-hand side as a matrix $\mathbf{b}$ and asking when $\mathbf{A}\mathbf{x} = \mathbf{b}$.
 \[
-\mathbf{B} =
+\mathbf{b} =
 \begin{bmatrix}
     12 \\
     10 \\
@@ -215,7 +215,7 @@ The observant listener may notice these linear expression look like the left han
     -4
 \end{bmatrix}
 \]
-Putting it together nicely we have
+Putting it together nicely, we have
 
 \[
 \begin{bmatrix}
@@ -262,9 +262,9 @@ There are three types of elementary row operations we can apply to our augmented
 \begin{enumerate}
     \item Swapping two rows
     \item Multiplying a row by a nonzero number
-    \item Adding a multiple of one row another row
+    \item Adding a multiple of one row to another row
 \end{enumerate}
-I am going to claim that performing any of these row operations to our augmented matrix will not alter the solution. To demonstrate this we can step back to our previous language where "rows" of our augmented matrix are equations.
+I am going to claim that performing any of these row operations on our augmented matrix will not alter the solution. To demonstrate this, we can step back to our previous language where "rows" of our augmented matrix are equations.
 \end{frame}
 
 
@@ -285,7 +285,7 @@ It's evident that this system has an equivalent solution when the order of the e
 \end{frame}
 
 \begin{frame}{Gaussian Elimination}
-\framesubtitle{Elementary Row Operations: Multiplying a row by a non-zero scalar}
+\framesubtitle{Elementary Row Operations: Multiplying a row by a nonzero scalar}
 Now, let's delve into the second operation. Consider the solutions of:
 \begin{align*}
     2(2x_1 + 3x_2) &= 2(7) \\
@@ -308,7 +308,7 @@ Although this appears different, since $4x_1 - 2x_2 = 2$, we can employ substitu
 \end{align*}
 Now, we can confidently conclude that this is valid. We've essentially added the same constant to both sides of the equation, relying on our intuition from middle school algebra.
 
-Now that we believe we can perform row operation without changing our solutions how does this help?
+Now that we believe we can perform row operations without changing our solutions, how does this help?
 \end{frame}
 
 \begin{frame}{Gaussian Elimination}
@@ -363,7 +363,7 @@ Now that we believe we can perform row operation without changing our solutions 
 \xrightarrow{\substack{R_1 - R_3 \\ R_2 + 2R_3 \\ R_4 + 2R_3}}
 \left[ 
     \begin{array}{cccc|c}
-    1 & 0 & 0 & -\frac{1}{6} & -\frac{2}{3} \\
+    1 & 0 & 0 & -\frac{1}{6} & \frac{2}{3} \\
     0 & 1 & 0 & \frac{5}{6} & \frac{5}{3} \\
     0 & 0 & 1 & -\frac{5}{6} & -\frac{8}{3} \\
     0 & 0 & 0 & -\frac{1}{6} & -\frac{1}{3}
@@ -372,7 +372,7 @@ Now that we believe we can perform row operation without changing our solutions 
 \xrightarrow{-6R_4}
 &\left[ 
     \begin{array}{cccc|c}
-    1 & 0 & 0 & -\frac{1}{6} & -\frac{2}{3} \\
+    1 & 0 & 0 & -\frac{1}{6} & \frac{2}{3} \\
     0 & 1 & 0 & \frac{5}{6} & \frac{5}{3} \\
     0 & 0 & 1 & -\frac{5}{6} & -\frac{8}{3} \\
     0 & 0 & 0 & 1 & 2
@@ -393,7 +393,7 @@ Now that we believe we can perform row operation without changing our solutions 
 
 \begin{frame}{Gaussian Elimination}
 \framesubtitle{Row Reduction}
-If you found that to be painful, substitution is far worst. You're welcome to give it a try. This is where you'll truly understand why Gaussian Elimination earned its name. The objective of the row reduction process is to eliminate all values outside the diagonal and transform the remaining values into 1. This gives a nice correspondence of our $\mathbf{x}$ matrix and $\mathbf{B}$ matrix. Putting back our augmented matrix to $\mathbf{Ax=b}$ form:
+If you found that to be painful, substitution is far worse. You're welcome to give it a try. This is where you'll truly understand why Gaussian Elimination earned its name. The objective of the row reduction process is to eliminate all values outside the diagonal and transform the remaining values into 1. This gives a nice correspondence between our $\mathbf{x}$ matrix and $\mathbf{b}$ matrix. Putting our augmented matrix back into $\mathbf{A}\mathbf{x}=\mathbf{b}$ form:
 
 \[
 \begin{bmatrix}
@@ -431,17 +431,17 @@ If you found that to be painful, substitution is far worst. You're welcome to gi
 \end{bmatrix}
 \]
 
-Thus we have our solution. Now let's apply our knowledge.
+Thus, we have our solution. Now let's apply our knowledge.
 \end{frame}
 
 \begin{frame}{Stoichiometry}
 \framesubtitle{The Problem and Setup}
-We could use our knowledge to quickly balance chemical equations. In both sides of this combustion reaction of Propane we want the same number of carbon, oxygen, and hydrogen atoms, thus we need to figure out what are known as the stoichiometric coefficients.
+We could use our knowledge to quickly balance chemical equations. On both sides of this combustion reaction of propane, we want the same number of carbon, oxygen, and hydrogen atoms, so we need to figure out the stoichiometric coefficients.
 
 {\tiny 
 \begin{center}
-    C3H8 + O2 $\xrightarrow{}$ CO2 + H2O  \\
-    ($x_1$)C3H8 + ($x_2$)O2 $\xrightarrow{}$ ($x_3$)CO2 + ($x_4$)H2O
+    \(C_3H_8 + O_2 \xrightarrow{} CO_2 + H_2O\)  \\
+    \((x_1)C_3H_8 + (x_2)O_2 \xrightarrow{} (x_3)CO_2 + (x_4)H_2O\)
 \end{center}
 
 \[
@@ -541,7 +541,7 @@ As an augmented matrix:
 \xrightarrow{R_2 - 8R_1}
 &\left[ 
     \begin{array}{cccc|c}
-    1 & 0 & \frac{1}{3} & 0 & 0\\
+    1 & 0 & -\frac{1}{3} & 0 & 0\\
     0 & 0 & \frac{8}{3} & -2 & 0\\
     0 & 2 & -2 & -1 & 0
     \end{array}
@@ -557,12 +557,12 @@ As an augmented matrix:
 \xrightarrow{\substack{R_{2}/2 \\ \frac{3}{8}R_{3}}}
 &\left[ 
     \begin{array}{cccc|c}
-    1 & 0 & \frac{1}{3} & 0 & 0\\
+    1 & 0 & -\frac{1}{3} & 0 & 0\\
     0 & 1 & -1 & -\frac{1}{2} & 0\\
     0 & 0 & 1 & -\frac{3}{4} & 0
     \end{array}
 \right] 
-\xrightarrow{\substack{R_{1} - \frac{1}{3}R_3 \\ R_2 + R_3}}
+\xrightarrow{\substack{R_{1} + \frac{1}{3}R_3 \\ R_2 + R_3}}
 \left[ 
     \begin{array}{cccc|c}
     1 & 0 & 0 & -\frac{1}{4} & 0 \\
@@ -572,25 +572,25 @@ As an augmented matrix:
 \right] 
 \end{align*}
 
-Notice that $x_4$ is a free variable that the other variables depend on let $x_4 = t$
+Notice that $x_4$ is a free variable that the other variables depend on. Let $x_4 = t$.
 
 \begin{align*}
     x_1 - \frac{1}{4}t = 0 \implies x_1 &= \frac{1}{4}t \\
-    x_2 - \frac{5}{4} = 0 \implies x_2 &= \frac{5}{4}t \\
-    x_3 + \frac{3}{4}t = 0 \implies x_3 &= \frac{3}{4}t
+    x_2 - \frac{5}{4}t = 0 \implies x_2 &= \frac{5}{4}t \\
+    x_3 - \frac{3}{4}t = 0 \implies x_3 &= \frac{3}{4}t
 \end{align*}
 }
 \end{frame}
 
 \begin{frame}{Stoichiometry}
-    It is logical to have a single free variable because when we proportionally scale all the coefficients, the balance of our equation should remain unaffected.
+It is logical to have a single free variable because when we proportionally scale all the coefficients, the balance of our equation should remain unaffected.
 
-    However we want the lowest value of $t$ such that every value is an integer so we choose the solution where $t=4$
+However, we want the lowest value of $t$ such that every value is an integer, so we choose the solution where $t=4$.
 
-thus we have, $x_1 = 1, x_2=5, x_3=3,x_4=4$
+Thus, we have \(x_1 = 1, x_2=5, x_3=3, x_4=4\).
 
 \begin{center}
-    C3H8 + 5O2 $\xrightarrow{}$ 3CO2 + 4H2O \\
+    \(C_3H_8 + 5O_2 \xrightarrow{} 3CO_2 + 4H_2O\)
 \end{center}
 
 and our reaction is balanced.
